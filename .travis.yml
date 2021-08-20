@@ -4,4 +4,4 @@ services:
 before_install:
     - docker build -t task-manager -f Dockerfile.dev .
 script:
-    - docker run task-manager nom run test -- --coverage
+    - docker run -e CI=true task-manager nom run test
