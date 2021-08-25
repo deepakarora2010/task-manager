@@ -1,6 +1,10 @@
+language: generic 
 sudo: required
 services:
     - docker
 before_install:
-    - docker build -t task-manager -f Dockerfile.dev .
+    - docker build -t deepakarora2010/task-manager -f Dockerfile.dev .
+script:
+  - docker run -e CI=true deepakarora2010/task-manager npm run test
+  
 
