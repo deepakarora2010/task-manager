@@ -1,4 +1,4 @@
-sudo: required 
+sudo: true 
 
 language: node_js 
 
@@ -7,7 +7,6 @@ services:
 before_install:
     - docker build -t deepakarora2010/task-manager -f Dockerfile.dev .
 script:
-    - npm test
-    - npm run build
+  - docker run -e CI=true USERNAME/docker-react npm run test
   
 
