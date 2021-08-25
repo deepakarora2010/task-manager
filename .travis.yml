@@ -1,12 +1,13 @@
 sudo: required 
 
-language: generic 
+language: node_js 
 
 services:
     - docker
 before_install:
     - docker build -t deepakarora2010/task-manager -f Dockerfile.dev .
 script:
-  - bundle exec rake test
+    - npm test
+    - npm run build
   
 
