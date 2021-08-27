@@ -12,3 +12,11 @@ before_install:
 script:
   - CI=false npm run build
 
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "taskmanager2"
+  env: "Taskmanager2-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-878656876834"
+  bucket_path: "taskmanager2"
+
