@@ -1,11 +1,12 @@
-sudo: required
-language: generic
+sudo: false
 
-services:
-  - docker
+language: node_js
 
-before_install:
-  - docker build -t stephengrider/docker-react -f Dockerfile.dev .
+node_js:
+  - node
 
 script:
-  - docker run -e CI=true stephengrider/docker-react npm run test
+  - npm run lint
+
+nofications:
+  email: false
