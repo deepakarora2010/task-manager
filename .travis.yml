@@ -7,7 +7,7 @@ node_js:
 services:
   - docker
 before_install:
-  - docker build -t deepakarora2010/task-manager -f .
+  - docker build -t deepakarora2010/task-manager .
     
 script:
   - CI=false npm run build
